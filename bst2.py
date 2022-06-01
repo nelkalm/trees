@@ -63,7 +63,7 @@ class BinarySearchTree:
                         parent.right_node = node.left_node
                 else:
                     self.root = node.left_node
-                node.right_node.parent = parent
+                node.left_node.parent = parent
                 del node
 
             # (3) REMOVE NODE WITH 2 CHILDREN
