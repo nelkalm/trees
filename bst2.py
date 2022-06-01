@@ -138,6 +138,24 @@ class BinarySearchTree:
             self.traverse_in_order(node.right_node)
 
 
+class TreeComparator:
+
+    def compare(self, node1, node2):
+
+        # check the base-case (so these node1 and node2 may be the nodes
+        # of a leaf node)
+        # node1 maybe a None or node2 maybe a None
+        if not node1 or not node2:
+            return node1 == node2
+
+        # we have to check the values in the nodes
+        if node1.data is not node2.data:
+            return False
+
+        # check all the left and right subtrees (children) recursively
+        return self.compare(node1.left_node, node2.left_node) and self.compare(node1.right_node, node2.right_node)
+
+
 if __name__ == '__main__':
     bst = BinarySearchTree()
 
